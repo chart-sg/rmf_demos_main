@@ -82,5 +82,9 @@
     <node pkg="rmf_fleet_adapter" exec="mutex_group_supervisor"/>
   </group>
 
+  <!-- Zone Supervisor, manages zone bookings for robots -->
+  <group>
+    <node pkg="rmf_fleet_adapter" exec="zone_supervisor"/>
+  </group>
 
 </launch>
