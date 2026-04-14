@@ -1,7 +1,7 @@
 coordinate_system: reference_image
 crowd_sim:
   agent_groups:
-    - {agents_name: [deliveryBot_1], agents_number: 1, group_id: 0, profile_selector: external_agent, state_selector: external_static, x: 0, y: 0}
+    - {agents_name: [deliveryBot_1, tinyBot_1], agents_number: 2, group_id: 0, profile_selector: external_agent, state_selector: external_static, x: 0, y: 0}
   agent_profiles:
     - {ORCA_tau: 1, ORCA_tauObst: 0.40000000000000002, class: 1, max_accel: 0, max_angle_vel: 0, max_neighbors: 10, max_speed: 0, name: external_agent, neighbor_dist: 5, obstacle_set: 1, pref_speed: 0, r: 0.25}
   enable: 0
@@ -39,6 +39,10 @@ levels:
       - [62, 63, {bidirectional: [4, true], demo_mock_floor_name: [1, ""], demo_mock_lift_name: [1, ""], graph_idx: [2, 0], mutex: [1, ""], orientation: [1, ""], speed_limit: [3, 0]}]
       - [63, 64, {bidirectional: [4, true], demo_mock_floor_name: [1, ""], demo_mock_lift_name: [1, ""], graph_idx: [2, 0], mutex: [1, ""], orientation: [1, ""], speed_limit: [3, 0]}]
       - [64, 61, {bidirectional: [4, true], demo_mock_floor_name: [1, ""], demo_mock_lift_name: [1, ""], graph_idx: [2, 0], mutex: [1, ""], orientation: [1, ""], speed_limit: [3, 0]}]
+      - [65, 63, {bidirectional: [4, true], demo_mock_floor_name: [1, ""], demo_mock_lift_name: [1, ""], graph_idx: [2, 1], mutex: [1, ""], orientation: [1, ""], speed_limit: [3, 0]}]
+      - [63, 62, {bidirectional: [4, true], demo_mock_floor_name: [1, ""], demo_mock_lift_name: [1, ""], graph_idx: [2, 1], mutex: [1, ""], orientation: [1, ""], speed_limit: [3, 0]}]
+      - [63, 64, {bidirectional: [4, true], demo_mock_floor_name: [1, ""], demo_mock_lift_name: [1, ""], graph_idx: [2, 1], mutex: [1, ""], orientation: [1, ""], speed_limit: [3, 0]}]
+      - [64, 61, {bidirectional: [4, true], demo_mock_floor_name: [1, ""], demo_mock_lift_name: [1, ""], graph_idx: [2, 1], mutex: [1, ""], orientation: [1, ""], speed_limit: [3, 0]}]
     layers:
       {}
     measurements:
@@ -109,10 +113,11 @@ levels:
       - [1910.8009999999999, 1194.1010000000001, 0, ""]
       - [1776.231, 1291.97, 0, ""]
       - [1776.231, 1189.2080000000001, 0, ""]
-      - [2215.4180000000001, 1672.4349999999999, 0, consultation_zone_entry]
-      - [2219.1700000000001, 1929.9449999999999, 0, consultation_zone_exit]
-      - [1933.1310000000001, 1928.9010000000001, 0, ""]
-      - [1935.2190000000001, 1673.1369999999999, 0, ""]
+      - [2202.1709999999998, 1727.4290000000001, 0, consultation_zone_entry]
+      - [2203.1979999999999, 1869.1420000000001, 0, consultation_zone_exit]
+      - [1983.441, 1870.1690000000001, 0, ""]
+      - [1983.441, 1727.4290000000001, 0, ""]
+      - [1777.0450000000001, 2089.8159999999998, 0, t_charger, {is_charger: [4, true], is_holding_point: [4, true], is_parking_spot: [4, true], spawn_robot_name: [1, tinyBot_1], spawn_robot_type: [1, Open-RMF/TinyRobot]}]
     walls:
       - [3, 4, {alpha: [3, 1], texture_height: [3, 2.5], texture_name: [1, default], texture_scale: [3, 1], texture_width: [3, 1]}]
       - [5, 6, {alpha: [3, 1], texture_height: [3, 2.5], texture_name: [1, default], texture_scale: [3, 1], texture_width: [3, 1]}]
@@ -302,7 +307,7 @@ parameters:
   suggested_offset_x: [3, 22000]
   suggested_offset_y: [3, 31500]
 zones:
-  consultation_wheelchair_wait_zone:
+  consultation:
     depth: 4
     level: L1
     transition_lanes:
@@ -330,23 +335,22 @@ zones:
         internal_vertex: wait_3
         is_entry_lane: false
         is_exit_lane: true
-    type: 1
     vertices:
       wait_1:
-        group: Default
-        priority: 2
-        x: 0
-        y: -1
-      wait_2:
-        group: Default
+        group: A
         priority: 1
+        x: 0
+        y: -1.6000000000000001
+      wait_2:
+        group: B
+        priority: 2
         x: 0
         y: 0
       wait_3:
-        group: Default
+        group: C
         priority: 3
         x: 0
-        y: 1
+        y: 1.6000000000000001
     width: 2
     x: 2387
     y: 1798
