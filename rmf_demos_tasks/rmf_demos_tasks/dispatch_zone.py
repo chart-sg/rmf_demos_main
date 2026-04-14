@@ -94,9 +94,9 @@ class TaskRequester(Node):
         parser.add_argument(
             '-pt',
             '--priority',
-            help='Priority value for this request',
+            help='Priority value for this request (0 or 1)',
             type=int,
-            default=0,
+            default=None,
         )
         parser.add_argument(
             '--use_sim_time',
@@ -151,7 +151,11 @@ class TaskRequester(Node):
         start_time = now.sec * 1000 + round(now.nanosec / 10**6)
         request['unix_millis_request_time'] = start_time
         request['unix_millis_earliest_start_time'] = start_time
-        # todo(YV): Fill priority after schema is added
+        if self.args.priority is not None:
+            request['priority'] = {
+                'type': 'binary',
+                'value': 1 if self.args.priority > 0 else 0,
+            }
 
         request['requester'] = self.args.requester
 
