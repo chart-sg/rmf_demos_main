@@ -82,5 +82,11 @@
     <node pkg="rmf_fleet_adapter" exec="mutex_group_supervisor"/>
   </group>
 
+  <!-- Zone Supervisor, manages zone bookings for robots -->
+  <group>
+    <node pkg="rmf_fleet_adapter" exec="zone_supervisor">
+      <param name="use_sim_time" value="$(var use_sim_time)"/>
+    </node>
+  </group>
 
 </launch>
