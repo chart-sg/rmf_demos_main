@@ -30,6 +30,8 @@ setup(
             'request_loop = rmf_demos_tasks.request_loop:main',
             'request_lift = rmf_demos_tasks.request_lift:main',
             'cancel_task = rmf_demos_tasks.cancel_task:main',
+            'interrupt_robot = rmf_demos_tasks.interrupt_robot:main',
+            'resume_robot = rmf_demos_tasks.resume_robot:main',
             'dispatch_dynamic_event = \
                 rmf_demos_tasks.dispatch_dynamic_event:main',
             'dynamic_event_client = rmf_demos_tasks.dynamic_event_client:main',
