@@ -95,4 +95,12 @@
     </node>
   </group>
 
+  <!-- Simulated Lift Controller, allocates simulated lifts for LiftSelectRequests -->
+  <!-- <group if="$(var use_simulated_lift_controller)">
+    <node pkg="rmf_simulation_lift_controller" exec="simulated_lift_controller" output="both">
+      <param name="use_sim_time" value="$(var use_sim_time)"/>
+      <param name="confirmation_timeout" value="$(var lift_confirmation_timeout)"/>
+    </node>
+  </group> -->
+
 </launch>

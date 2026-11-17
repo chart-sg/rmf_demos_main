@@ -17,6 +17,7 @@
   <exec_depend>rmf_task_ros2</exec_depend>
   <exec_depend>rmf_fleet_adapter</exec_depend>
   <exec_depend>rmf_building_map_tools</exec_depend>
+  <exec_depend>rmf_simulation_lift_controller</exec_depend>
 
   <exec_depend>rmf_visualization</exec_depend>
 
